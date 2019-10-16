@@ -9,22 +9,6 @@ error_reporting(E_ALL);
 //$data = $pdo->query("SELECT * FROM student")->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($data);
 
-function fetchAllUsersInfo(PDO $pdo){
-    return $pdo->query("SELECT first_name, last_name, email, preferred_language, id  FROM student")->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function printRows($data){
-    foreach ($data as $row){
-        echo "<tr>
-                <td>" . $row['first_name'] . "</td>
-                <td>" . $row['last_name'] . "</td>
-                <td>" . $row['email'] . "</td>
-                <td>" . $row['preferred_language'] . "</td>
-                <td><a href='profile.php?user=" . $row['id'] . "'>My Page</a></td>
-            </tr>";
-    }
-}
-
 ?>
 
 <!doctype html>
@@ -54,6 +38,14 @@ function printRows($data){
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.php">Overview</a></li>
+            <li><a href="register.php">Insert</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder2</a></li>
+        </ul>
+    </nav>
     <table>
         <tr>
             <th>First name</th>
