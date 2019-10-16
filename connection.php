@@ -21,31 +21,18 @@
                 :email, LOWER (:preferred_language), :avatar, :video, :quote, :quote_author)';
         $stmt = $pdo->prepare($sql);
 
-        $stmt->bindParam(':first_name', $first_name);
-        $stmt->bindParam(':last_name', $last_name);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':linkedin', $linkedin);
-        $stmt->bindParam(':github', $github);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':preferred_language', $preferred_language);
-        $stmt->bindParam(':avatar', $avatar);
-        $stmt->bindParam(':video', $video);
-        $stmt->bindParam(':quote', $quote);
-        $stmt->bindParam(':quote_author', $quote_author);
-
-        $first_name = $data['first_name'];
-        $last_name = $data['last_name'];
-        $username = $data['username'];
-        $password = $data['password'];
-        $linkedin = $data['linkedin'];
-        $github = $data['github'];
-        $email = $data['email'];
-        $preferred_language = $data['preferred_language'];
-        $avatar = $data['avatar'];
-        $video = $data['video'];
-        $quote = $data['quote'];
-        $quote_author = $data['quote_author'];
+        $stmt->bindValue(':first_name', $data['first_name']);
+        $stmt->bindValue(':last_name', $data['last_name']);
+        $stmt->bindValue(':username', $data['username']);
+        $stmt->bindValue(':password', $data['password']);
+        $stmt->bindValue(':linkedin', $data['linkedin']);
+        $stmt->bindValue(':github', $data['github']);
+        $stmt->bindValue(':email', $data['email']);
+        $stmt->bindValue(':preferred_language', $data['preferred_language']);
+        $stmt->bindValue(':avatar', $data['avatar']);
+        $stmt->bindValue(':video', $data['video']);
+        $stmt->bindValue(':quote', $data['quote']);
+        $stmt->bindValue(':quote_author', $data['quote_author']);
 
         $stmt->execute();
         $stmt = null;
