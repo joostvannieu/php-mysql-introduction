@@ -1,14 +1,12 @@
 <?php
     require "auth.php";
-
-    var_dump($_POST);
+    checkForErrors();
+    //var_dump($_POST);
 
     /*if (!empty($_POST)){
         processEmail($_POST);
         unset($_POST);
     }*/
-
-    login($_POST);
 
 
 ?>
@@ -23,14 +21,14 @@
     <title>Login</title>
 </head>
 <body>
-<form action="login.php" method="POST">
+<form action="auth.php" method="POST">
     <fieldset>
         <legend>Login</legend>
         <label for="username">Username / E-mail</label>
         <input type="text" name="username" id="username" required><br>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required><br>
-        <input type="submit" value="Let me in">
+        <input type="submit" value="Let me in" name="login">
     </fieldset>
     <div>
 

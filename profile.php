@@ -1,8 +1,9 @@
 <?php
-    require "connection.php";
+    require "auth.php";
+
+    checkIfLoggedIn();
 
     $userId = $_GET['user'];
-
     $data = fetchUserInfo(openConnection(), $userId);
     //var_dump($_GET);
     //var_dump($data);
